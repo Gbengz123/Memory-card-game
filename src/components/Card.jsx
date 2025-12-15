@@ -1,7 +1,7 @@
 function Card({ character }) {
   return (
-    <div className="flex flex-col gap-10 shadow-lg rounded-2xl p-3 items-center cursor-pointer">
-      <img src={character.images[0]} alt={character.name} className="w-52 h-52 border" />
+    <div className="flex cursor-pointer flex-col items-center gap-10 rounded-2xl p-3 shadow-lg">
+      <img src={character.images[0]} alt={character.name} className="h-52 w-52 border" />
       <p className="text-2xl">{character.name}</p>
     </div>
   );

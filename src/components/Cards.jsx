@@ -19,7 +19,7 @@ function Cards() {
   }, []);
 
   return (
-    <div className="py-4 grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] justify-center gap-4">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] justify-center gap-4 py-4">
       {characters.map((character) => {
         return <Card key={character.id} character={character} />;
       })}
