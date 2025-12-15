@@ -37,6 +37,7 @@ export default defineConfig([
           printWidth: 100,
           tabWidth: 2,
           arrowParens: 'always',
+          plugins: ['prettier-plugin-tailwindcss'],
         },
       ],
     },
