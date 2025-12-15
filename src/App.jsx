@@ -4,7 +4,7 @@ import Cards from './components/Cards';
 
 function App() {
   return (
-    <div className="w-screen min-h-screen px-6 min-w-sm flex flex-col sm:px-10">
+    <div className="flex min-h-screen w-screen min-w-sm flex-col px-6 sm:px-10">
       <Header />
       <Cards />
     </div>
