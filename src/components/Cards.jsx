@@ -11,14 +11,17 @@ function shuffleCharacters(characterArr) {
   return arr;
 }
 
-function Cards() {
+function Cards({ score, highScore, setScore, setHighScore }) {
   const [characters, setCharacters] = useState([]);
   const shuffledCharacters = useRef(null);
+  const clickedCharacters = useRef(new Set());
   // fetch cahracter data on mount
   useEffect(() => {
     async function getCharacters() {
       try {
-        const res = await fetch('https://dattebayo-api.onrender.com/characters');
+        const res = await fetch(
+          'https://dattebayo-api.onrender.com/characters',
+        );
         if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
 
         const data = await res.json();
@@ -46,6 +49,11 @@ function Cards() {
             shuffleCharacters={shuffleCharacters}
             characters={characters}
             setCharacters={setCharacters}
+            score={score}
+            highScore={highScore}
+            setScore={setScore}
+            setHighScore={setHighScore}
+            clickedCharacters={clickedCharacters}
           />
         );
       })}
