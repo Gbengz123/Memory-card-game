@@ -39,7 +39,15 @@ function Cards() {
   return (
     <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] justify-center gap-4 py-4">
       {characters.map((character) => {
-        return <Card key={character.id} character={character} />;
+        return (
+          <Card
+            key={character.id}
+            character={character}
+            shuffleCharacters={shuffleCharacters}
+            characters={characters}
+            setCharacters={setCharacters}
+          />
+        );
       })}
     </div>
   );
