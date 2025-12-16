@@ -1,33 +1,21 @@
-function Card({
-  character,
-  shuffleCharacters,
-  characters,
-  setCharacters,
-  score,
-  highScore,
-  setScore,
-  setHighScore,
-  clickedCharacters,
-}) {
-  function handleClick(character) {
-    setCharacters(shuffleCharacters(characters));
-    if (!clickedCharacters.current.has(character.id)) {
-      setScore(score + 1);
-      clickedCharacters.current.add(character.id);
-    } else {
-      if (score > highScore) setHighScore(score);
-      setScore(0);
-      clickedCharacters.current.clear();
-    }
-  }
-
+function Card({ character, handleClick }) {
   return (
     <div
       onClick={() => handleClick(character)}
-      className="flex cursor-pointer flex-col items-center gap-6 rounded-2xl p-3 shadow-lg"
+      className="flex cursor-pointer flex-col items-center gap-4 rounded-2xl bg-slate-50 p-3 shadow-lg"
     >
-      <img src={character.images[0]} alt={character.name} className="h-52" />
-      <p className="text-2xl">{character.name}</p>
+      {!character ? (
+        <div className="h-62.5 w-full animate-pulse rounded-lg bg-gray-300"></div>
+      ) : (
+        <>
+          <img
+            src={character.images[0]}
+            alt={character.name}
+            className="h-52 rounded-lg"
+          />
+          <p className="text-2xl">{character.name}</p>
+        </>
+      )}
     </div>
   );
 }
