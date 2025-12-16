@@ -34,7 +34,7 @@ export default defineConfig([
           semi: true,
           singleQuote: true,
           trailingComma: 'all',
-          printWidth: 100,
+          //printWidth: 100,
           tabWidth: 2,
           arrowParens: 'always',
           plugins: ['prettier-plugin-tailwindcss'],
